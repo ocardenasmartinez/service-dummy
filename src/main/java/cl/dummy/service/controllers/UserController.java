@@ -2,6 +2,7 @@ package cl.dummy.service.controllers;
 
 import cl.dummy.service.controllers.entities.User;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -12,7 +13,7 @@ import java.util.List;
 @RestController
 public class UserController {
 
-    @GetMapping
+    @GetMapping(path = "/getusers", produces= MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List> getUsers(){
         User user1 = new User("Juan", "Perez");
         User user2 = new User("Elva", "Lazo");
